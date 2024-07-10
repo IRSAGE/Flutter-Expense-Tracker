@@ -30,6 +30,8 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  void _submitExpenseData() {}
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -109,14 +111,7 @@ class _NewExpenseState extends State<NewExpense> {
                   },
                   child: const Text("Cancel")),
               ElevatedButton(
-                  onPressed: () {
-                    print({
-                      _titleController.text,
-                      _amountController.text,
-                      _selectedDate,
-                      _selectedCategory
-                    });
-                  },
+                  onPressed: _submitExpenseData,
                   child: const Text("Save Expense")),
             ],
           )
