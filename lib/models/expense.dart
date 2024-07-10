@@ -43,7 +43,10 @@ class ExpenseBucket {
     required this.category,
     required this.expenses,
   });
-
+  ExpenseBucket.forCategory(List<Expense> alleExpenses, this.category)
+      : expenses = alleExpenses
+            .where((expense) => expense.category == category)
+            .toList();
   final Category category;
   final List<Expense> expenses;
 
